@@ -69,3 +69,6 @@ metastore_db
 
 # Kafka Connect dynamically created connector configs
 *s3.properties.json
+
+# Airflow
+airflow
