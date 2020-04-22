@@ -1,4 +1,4 @@
-include makester/makefiles/base.mk
+include makester/makefiles/makester.mk
 include makester/makefiles/python-venv.mk
 
 include envfile
@@ -46,7 +46,7 @@ tests:
  --pythonwarnings ignore --cov dags \
  -o junit_family=xunit2 --junitxml junit.xml -sv $(TESTS)
 
-help: base-help python-venv-help
+help: makester-help python-venv-help
 	@echo "(Makefile)\n\
   init                 Build the local Python-based virtual environment\n\
   reset-airflow        Destroy Airflow environment at \"AIRFLOW_HOME\"\n\
