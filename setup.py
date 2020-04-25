@@ -23,7 +23,8 @@ SETUP_KWARGS = {
     'author_email': 'lou.markovski@gmail.com',
     'url': 'https://github.com/loum/data-pipeline-dags',
     'install_requires': PACKAGES,
-    'packages': setuptools.find_namespace_packages(include=['data_pipelines_dags.*']),
+    'packages': setuptools.find_namespace_packages(include=['data_pipelines_dags.*'],
+                                                   exclude=['data_pipelines_dags.*.tests']),
     'package_data': {
         'data_pipeline_dags': [
         ],
