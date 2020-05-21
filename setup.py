@@ -8,7 +8,15 @@ PROJECT_NAME = os.path.basename(os.path.abspath(os.curdir))
 PROD_PACKAGES = [
 ]
 
+# Pinned pytest<=5.3.5 as per https://github.com/Teemu/pytest-sugar/issues/187
+# Pinned SQLAlchemy==1.3.15 as per https://github.com/apache/airflow/issues/8211
 DEV_PACKAGES = [
+    'apache-airflow==1.10.10',
+    'pylint',
+    'pytest<=5.3.5',
+    'pytest-cov',
+    'pytest-sugar',
+    'SQLAlchemy==1.3.15',
 ]
 
 PACKAGES = list(PROD_PACKAGES)
@@ -24,11 +32,8 @@ SETUP_KWARGS = {
     'url': 'https://github.com/loum/data-pipeline-dags',
     'install_requires': PACKAGES,
     'packages': setuptools.find_namespace_packages(include=['data_pipelines_dags.*'],
-                                                   exclude=['data_pipelines_dags.*.tests']),
-    'package_data': {
-        'data_pipeline_dags': [
-        ],
-    },
+                                                   exclude=['data_pipelines_dags.tests']),
+    'include_package_data': True,
     'license': 'MIT',
     'classifiers': [
         'Development Status :: 5 - Production/Stable',
