@@ -26,21 +26,7 @@ link-dags:
 init-db:
 	@airflow initdb
 
-init-connections:
-	@airflow connections --add\
- --conn_id azure_data_factory_default\
- --conn_type azure_data_factory\
- --conn_extra '{"tenantId": "<TENANT>", "subscriptionId": "<SUBSCRIPTION ID>"}'
-	@airflow connections --add\
- --conn_id azure_event_hub_default\
- --conn_type azure_event_hub\
- --conn_extra '{"consumer_group": "<consumer_group>"}'
-
-init-variables:
-	@airflow variables --import $(PROJECT_DIR)/config/$(AIRFLOW_CUSTOM_ENV)/dag_variables.json
-	@airflow variables --import $(PROJECT_DIR)/config/common/task_variables.json
-
-pristine: clear-env init reset-airflow version link-dags init-db init-connections init-variables
+pristine: clear-env init reset-airflow version link-dags init-db
 
 start:
 	@airflow scheduler & airflow webserver && kill $! || true
