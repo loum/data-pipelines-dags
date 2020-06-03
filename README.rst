@@ -49,6 +49,14 @@ Setup the environment::
 
     The ``pristine`` target will remove and reset all existing Airflow state in ``$(HOME)/airflow``.
 
+********************************
+Running the Airflow Webserver UI
+********************************
+
+Launch the Airflow webserver UI to visualise and interact with dashboard (Ctrl-C to stop)::
+
+    $ make start
+
 **********************
 Writing Your First DAG
 **********************
