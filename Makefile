@@ -3,7 +3,9 @@ include makester/makefiles/python-venv.mk
 
 include envfile
 VARS:=$(shell sed -ne 's/ *\#.*$$//; /./ s/=.*$$// p' envfile)
+ifneq ($(MAKECMDGOALS),tests)
 $(foreach v,$(VARS),$(eval $(shell echo export $(v)="$($(v))")))
+endif
 
 PROJECT_DIR := $(PWD)/data_pipelines_dags
 
