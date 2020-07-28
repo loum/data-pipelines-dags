@@ -4,7 +4,8 @@ Data Pipelines - Airflow DAGs
 
 Airflow DAGs (task level) component of a Data Workflow Management system using these components:
 
-- `Airflow DAGs <https://airflow.apache.org/docs/1.10.10/concepts.html?highlight=dag#core-ideas>`_
+- `Airflow DAGs <https://airflow.apache.org/docs/1.10.11/concepts.html?highlight=dag#core-ideas>`_
+- `Python 3.7.6 <https://www.python.org/downloads/release/python-376/>`_
 
 The goals here are:
 
