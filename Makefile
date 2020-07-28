@@ -15,7 +15,6 @@ package: APP_ENV=prod
 
 export APP_ENV=dev
 init:
-	$(MAKE) -s makester-requirements
 	$(MAKE) -s pip-editable
 
 reset-airflow:
